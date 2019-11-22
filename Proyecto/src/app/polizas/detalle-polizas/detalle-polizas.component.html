@@ -1,0 +1,54 @@
+<div class="container">
+  <form class="form-signin" [formGroup]="detalleForm">
+  
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Detalle Poliza {{poliza.nroSolicitud}}</h1>
+    </div>
+  
+    <mat-form-field>
+      <mat-label>Fecha Solicitud:</mat-label>
+      <input matInput type="text" id="inputSolicitud" formControlName="fechaSolicitud">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Centro de gastos:</mat-label>
+      <input matInput type="text" id="centroGastos" formControlName="centroGastos">     
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Inmobiliaria:</mat-label>
+      <input matInput type="text" id="inmobiliaria" formControlName="inmobiliaria">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Nombre proyecto:</mat-label>
+      <input matInput type="text" id="nombreProyecto" formControlName="nombreProyecto">
+    </mat-form-field>
+    
+    <hr>
+
+    <div class="text-center mb-4">
+      <h2 class="h3 mb-3 font-weight-nomal">Informacion Cliente</h2>
+    </div>
+    <mat-form-field>
+      <mat-label>RUT:</mat-label>
+      <input matInput type="text" id="rut" formControlName="rut">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Fecha nacimiento:</mat-label>
+      <input matInput type="text" id="fechaNacimiento" formControlName="fechaNacimiento">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Comprador:</mat-label>
+      <input matInput type="text" id="comprador" formControlName="comprador">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Tipo persona:</mat-label>
+      <input matInput type="text" id="tipoPersona" formControlName="tipoPersona">
+    </mat-form-field>
+    
+  </form>
+</div>

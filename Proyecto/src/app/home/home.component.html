@@ -1,0 +1,22 @@
+<div class="container" *ngIf="this.loaded">
+  <form class="form-signin" (ngSubmit)="onSignIn(f)" #f="ngForm">
+  
+    <div class="text-center mb-4">
+      <h1 class="h3 mb-3 font-weight-normal">Ingrese sus credenciales</h1>
+    </div>
+    <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Usuario</mat-label>
+       <input matInput type="email" id="inputEmail" name="inputEmail" placeholder="Juanito" (keyup)="checkString101(email.value)" #email ngModel>
+   </mat-form-field>
+   <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" id="inputPassword" name="inputPassword" placeholder="12345" ngModel>
+   </mat-form-field>     
+    <button  mat-raised-button color="primary" type="submit" class="margin-left" [disabled]="!this.float" (click)="autentificarUsuario()">Iniciar sesion</button>
+    <p class="mt-5 mb-3 text-muted text-center">© </p>
+  </form>
+</div>
+<div *ngIf="!this.loaded" class="container loadContainer">
+  <div class="loader form-signin">
+  </div>
+</div>

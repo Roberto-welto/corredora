@@ -1,0 +1,122 @@
+<div class="container">
+    <form class="form-signin" [formGroup]="polizaForm" (ngSubmit)="crearPoliza()">
+    
+      <div class="text-center mb-4">
+        <h1 class="h3 mb-3 font-weight-normal">Crear poliza</h1>
+      </div>
+      <mat-form-field>
+        <mat-label>Numero Solicitud</mat-label>
+        <input matInput type="text" id="nroSolicitud" formControlName="nroSolicitud">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Fecha Solicitud</mat-label>
+        <input matInput type="date" id="inputSolicitud" formControlName="fechaSolicitud">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Centro de gastos</mat-label>
+        <input matInput type="text" id="centroGastos" formControlName="centroGastos">     
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Inmobiliaria</mat-label>
+        <mat-select id="inmobiliaria" formControlName="inmobiliaria">
+          <mat-option value="Socovesa" (click)="setCompania()">SOCOVESA</mat-option>
+          <mat-option value="Fundamenta" (click)="setCompania()">FUNDAMENTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Nombre proyecto</mat-label>
+        <input matInput type="text" id="nombreProyecto" formControlName="nombreProyecto">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Unidad</mat-label>
+        <input matInput type="text" id="unidad" formControlName="unidad">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Item financiamiento</mat-label>
+        <input type="text" matInput id="itemFinan" formControlName="itemFinan">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Monto UF</mat-label>
+        <input matInput type="text" id="montoUf" formControlName="montoUf">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Fecha Vencimiento</mat-label>
+        <input matInput type="date" formControlName="fechaVencimiento" id="fechaVencimiento">
+      </mat-form-field>
+      
+      <mat-form-field>
+        <mat-label>Fecha vigencia</mat-label>
+        <input matInput type="date" formControlName="fechaVigencia" id="fechaVigencia">
+      </mat-form-field>
+      
+      <hr>
+  
+      <div class="text-center mb-4">
+        <h2 class="h3 mb-3 font-weight-nomal">Informacion Cliente</h2>
+      </div>
+
+      <mat-form-field>
+        <mat-label>RUT</mat-label>
+        <input matInput type="text" id="rut" formControlName="rut">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Direccion</mat-label>
+        <input matInput type="text" id="direccion" formControlName="direccion">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" id="comprador" formControlName="nombre">
+      </mat-form-field>
+      
+      <hr>
+<!-- 
+      <div class="text-center mb-4">
+        <h2 class="h3 mb-3 font-weight-normal">Detalles compañia</h2>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Rut Compañia:</mat-label>
+        <input matInput type="text" formControlName="rutCompañia" id="rutCompañia">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Tasa de</mat-label>
+      </mat-form-field>
+      <hr> -->
+            
+      <div class="text-center mb-4">
+        <h2 class="h3 mb-3 font-weight-nomal">Calculo polizas</h2>
+      </div>
+
+      <mat-form-field>
+        <mat-label>Monto cuota</mat-label>
+        <input matInput type="text" formControlName="montoCuota" id="montoCuota" (keyup)="setTotal()">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Tasa</mat-label>
+        <input matInput type="text" formControlName="tasa" id="tasa">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Total</mat-label>
+        <input matInput type="text" formControlName="total" id="total">
+      </mat-form-field>
+
+      <hr>
+
+      <button mat-raised-button color="primary" type="submit" class="margin-left">Guardar</button>
+
+    </form>
+  </div>
+ 

@@ -1,0 +1,27 @@
+.form-signin{
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid black;
+}
+.input-container {
+    margin: 3em auto;
+    background-color: #EDEDED;
+    border: 1px solid #DFDFDF;
+    border-radius: 5px;
+}
+.file-info{
+    font-size: 0.9em;
+    padding: 5px 10px;
+    height: auto;
+}
+input[type="file"]{
+    opacity: 0;
+    display: none;
+    align-items: baseline;
+}
+.browse{
+    background: #03A595;
+    color: #fff;
+}

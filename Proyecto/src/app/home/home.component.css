@@ -1,0 +1,30 @@
+.form-signin{
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+    margin-top: 165px;
+    border: 0.5px solid black;
+}
+.full-width{
+    width: 100%;
+}
+.margin-left{
+    margin-left: 40%;
+}
+.loader{
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.loadContainer{
+    padding-top: 160px;
+}

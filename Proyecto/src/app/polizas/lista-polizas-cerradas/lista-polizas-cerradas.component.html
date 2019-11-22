@@ -1,0 +1,84 @@
+<div class="container">
+  <h3>Polizas cerradas</h3>
+  <div class="content">
+    <form action="" #f="ngForm" (ngSubmit)="filtrar(f)">
+      <div class="row">
+        <mat-form-field>
+        <mat-label>Desde</mat-label>
+        <input matInput type="date" class="form-control" id="desde" name="desde" #desde ngModel>
+        </mat-form-field>
+  
+        <mat-form-field>
+        <mat-label>Hasta</mat-label>
+        <input matInput type="date" class="form-control" id="hasta" name="hasta" #hasta ngModel>
+        </mat-form-field>
+     
+        <mat-form-field>
+        <mat-label>Nro. poliza</mat-label>
+        <input matInput type="text" class="form-control" id="nroPoliza" name="nroPoliza" #nroPoliza ngModel>
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Inmobiliaria</mat-label>
+        <input matInput type="text" class="form-control" id="inmobiliaria" name="inmobiliaria" #inmobiliaria ngModel>
+        </mat-form-field>
+
+      <div class="col-sm">
+        <button  mat-raised-button color="primary" type="submit">Buscar</button>
+        <button mat-raised-button color="link" type="button" (click)="filtrar(f)">Limpiar</button>
+      </div>
+    </div>
+    </form>
+  </div>
+  <hr>
+  <div class="content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="Fecha solicitud">
+        <mat-header-cell  *matHeaderCellDef>Fecha solicitud</mat-header-cell>
+        <mat-cell  *matCellDef="let poliza">{{ poliza.fechaSolicitud }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Nro. Poliza">
+        <mat-header-cell *matHeaderCellDef>Nro. Poliza</mat-header-cell>
+        <mat-cell  *matCellDef="let poliza">{{ poliza.nroSolicitud }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Inmobiliaria">
+        <mat-header-cell  *matHeaderCellDef>Inmobiliaria</mat-header-cell>
+        <mat-cell  *matCellDef="let poliza">{{ poliza.filial }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Proyecto">
+        <mat-header-cell  *matHeaderCellDef>Proyecto</mat-header-cell>
+        <mat-cell  *matCellDef="let poliza">{{ poliza.nombreProyecto }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Detalle">
+        <mat-header-cell  *matHeaderCellDef>Detalle</mat-header-cell>
+        <mat-cell  *matCellDef="let poliza; let i = index"><button mat-button color="primary" (click)="getDetalle(i)">Ver</button></mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>  
+      <!-- <thead>
+        <th scope="col">Fecha solicitud</th>
+        <th scope="col">Nro.poliza</th>
+        <th scope="col">Inmobiliaria</th>
+        <th scope="col">Proyecto</th>
+        <th scope="col">Detalle</th>
+        <th scope="col">Aprobar</th>
+        <th scope="col">Rechazar</th>
+      </thead> 
+      <tbody>
+          <tr *ngFor="let polizaItem of polizas; let i = index">
+            <mat-cell>{{ polizaItem.fechaSolicitud }}</mat-cell>
+            <mat-cell>{{ polizaItem.nroSolicitud }}</mat-cell>
+            <mat-cell>{{ polizaItem.filial }}</mat-cell>
+            <mat-cell>{{ polizaItem.nombreProyecto }}</mat-cell>
+            <mat-cell><button mat-button color="primary" (click)="gemat-celletalle(i)">Ver</button></mat-cell>
+            <mat-cell><button mat-raised-button class="green">Aprobar</button></mat-cell>
+            <mat-cell><button mat-raised-button color="warn">Rechazar</button></mat-cell>
+          </tr>
+        </tbody> -->
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  <button class="btn btn-primary">Refrescar</button>
+</div>  
+

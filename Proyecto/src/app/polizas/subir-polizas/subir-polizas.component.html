@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Subir polizas</h3>
+  <div class="container">
+    <form class="form-signin">
+      <div class="input-group">
+        <div class="input-container">
+          <label for="inputFile" class="file-info">Seleccionar archivo</label>
+          <input type="file" id="inputFile" aria-describedby="inputFile" (change)="excelUpdate($event)">
+        </div>
+      </div>
+      <div class="form-label-group floating-label">
+        <a href="#">Descargar plantilla</a>     
+      </div>
+    
+      <button mat-raised-button color="primary" type="submit" (click)="subirPolizas()">Subir</button>
+      <p class="mt-5 mb-3 text-muted text-center">© </p>
+    </form>
+  </div>
+</div>  
